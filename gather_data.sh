@@ -63,8 +63,7 @@ mkdir "$LOGS_DIR"
 for amount in ${REPLICAS[@]}; do
     echo starting $amount client containers
 
-    export CLIENT_REPLICAS=$amount
-    docker compose up -d
+    CLIENT_REPLICAS=$amount docker compose up -d --build
 
     if [ $? -ne 0 ]; then
         fatal "Docker compose error." $DOCKER_COMPOSE_ERROR
