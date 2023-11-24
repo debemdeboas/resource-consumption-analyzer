@@ -23,40 +23,24 @@ After installing the [required packages](#prerequisites) and running `gather_dat
 
 ```console
 $ python analyze_container_resources.py --help
-
- Usage: analyze_container_resources.py
-            [OPTIONS] CONTAINERS
+ Usage: analyze_container_resources.py [OPTIONS] CONTAINERS
 
  Analyze container resource consumption
 
-╭─ Arguments ───────────────────────────────────────╮
-│ *    containers      TEXT  Name of the containers │
-│                            to analyze as a JSON   │
-│                            dictionary of          │
-│                            '{"NAME": "CONTAINER   │
-│                            ID"}'                  │
-│                            [default: None]        │
-│                            [required]             │
-╰───────────────────────────────────────────────────╯
-╭─ Options ─────────────────────────────────────────╮
-│ --logs-dir    -l      TEXT     Directory where    │
-│                                the logs are       │
-│                                stored             │
-│                                [default: logs]    │
-│ --output-dir  -o      TEXT     Directory where    │
-│                                the output images  │
-│                                will be saved      │
-│                                [default: output]  │
-│ --x-limit     -x      INTEGER  Maximum value for  │
-│                                the x-axis.        │
-│                                Usually this is    │
-│                                your experiment    │
-│                                duration in        │
-│                                seconds            │
-│                                [default: 120]     │
-│ --help                         Show this message  │
-│                                and exit.          │
-╰───────────────────────────────────────────────────╯
+╭─ Arguments ───────────────────────────────────────────────────────────────────────────────────────╮
+│ *    containers      TEXT  Name of the containers to analyze as a JSON dictionary of '{"NAME":    │
+│                            "CONTAINER ID"}'                                                       │
+│                            [default: None]                                                        │
+│                            [required]                                                             │
+╰───────────────────────────────────────────────────────────────────────────────────────────────────╯
+╭─ Options ─────────────────────────────────────────────────────────────────────────────────────────╮
+│ --logs-dir    -l      TEXT     Directory where the logs are stored [default: logs]                │
+│ --output-dir  -o      TEXT     Directory where the output images will be saved [default: output]  │
+│ --x-limit     -x      INTEGER  Maximum value for the x-axis. Usually this is your experiment      │
+│                                duration in seconds                                                │
+│                                [default: 120]                                                     │
+│ --help                         Show this message and exit.                                        │
+╰───────────────────────────────────────────────────────────────────────────────────────────────────╯
 ```
 
 </div>
