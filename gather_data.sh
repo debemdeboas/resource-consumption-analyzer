@@ -22,7 +22,7 @@ fatal() {
 cleanup() {
     # Skip popd if we exited via $WRONG_ARGUMENTS
     if [ $? -ne $INVALID_DIRECTORY ]; then
-        popd > /dev/null        
+        popd > /dev/null
     fi
     exit
 }
@@ -37,8 +37,8 @@ fi
 trap cleanup EXIT
 
 REPLICAS=(1 2 5 10 20 50 100 200 300 500)
-RUN_AMOUNT_SECONDS=125
-LOGS_DIR=logs
+RUN_AMOUNT_SECONDS=15
+LOGS_DIR=`pwd`/logs
 
 # Change the current working directory to the provided folder
 # and redirect stderr to stdout
@@ -65,7 +65,7 @@ for amount in ${REPLICAS[@]}; do
 
     export CLIENT_REPLICAS=$amount
     docker compose up -d
-    
+
     if [ $? -ne 0 ]; then
         fatal "Docker compose error." $DOCKER_COMPOSE_ERROR
     fi
